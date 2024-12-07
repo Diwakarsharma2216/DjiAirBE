@@ -4,7 +4,7 @@
   "description": "<!-- # drone_site_BE2k24\r Building this repo as a backend of my drone_site. -->\r # drone_site_be2k24",
   "main": "index.js",
   "scripts": {
-    "server":"nodemon index.js",
+    "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.11.0",
     "mongoose": "^8.4.0",
     "multer": "^1.4.5-lts.1",
     "multer-storage-cloudinary": "^4.0.0",
