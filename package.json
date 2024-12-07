@@ -4,6 +4,7 @@
   "description": "<!-- # drone_site_BE2k24\r Building this repo as a backend of my drone_site. -->\r # drone_site_be2k24",
   "main": "index.js",
   "scripts": {
+    "build": "node build-script.js" ,
     "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

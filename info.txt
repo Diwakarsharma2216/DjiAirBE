@@ -1,9 +1,0 @@
-wUEhjQ3lowmN799Q mongodb Password 
-
-mongosh "mongodb+srv://cluster0.2edlw.mongodb.net/" --apiVersion 1 --username <db_username>
-
-
-mongodb+srv://diwakarsharma2216:wUEhjQ3lowmN799Q@cluster0.2edlw.mongodb.net/ --apiVersion 1
-
-
-mongodb+srv://diwakar:MyPass123@cluster0.2edlw.mongodb.net/test?retryWrites=true&w=majority
