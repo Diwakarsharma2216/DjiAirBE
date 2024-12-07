@@ -1,0 +1,28 @@
+{
+  "name": "drone_site_be2k24",
+  "version": "1.0.0",
+  "description": "<!-- # drone_site_BE2k24\r Building this repo as a backend of my drone_site. -->\r # drone_site_be2k24",
+  "main": "index.js",
+  "scripts": {
+    "server":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.0",
+    "razorpay": "^2.9.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

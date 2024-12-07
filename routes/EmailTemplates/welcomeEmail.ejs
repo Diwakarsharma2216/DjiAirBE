@@ -1,0 +1,908 @@
+<!-- EmailTemplates/welcomeEmail.ejs
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { background-color: #f8f9fa; padding: 10px; text-align: center; }
+        .content { margin: 20px; }
+        .footer { background-color: #f8f9fa; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Our Website</h1>
+    </div>
+    <div class="content">
+        <p>Hello <%= email %>,</p>
+        <p>Welcome to our website! We're glad to have you.</p>
+    </div>
+    <div class="footer">
+        <p>© 2024 Our Website. All rights reserved.</p>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <style type="text/css">
+        #outlook a {
+            padding: 0;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body,
+        #pagewrap_table,
+        #pagewrap_cell {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+
+
+
+        body,
+        #pagewrap_table {
+            background-color: #F0F1F2;
+        }
+
+        #pagewrap_cell {
+            padding-top: 40px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        #container_table {
+            width: 600px;
+        }
+
+        h1 {
+            color: #4E595D;
+            font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 120%;
+            letter-spacing: normal;
+            margin: 0;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 15px;
+            padding-left: 0;
+        }
+
+        h2 {
+            color: #4E595D;
+            font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 120%;
+            letter-spacing: normal;
+            margin: 0;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 15px;
+            padding-left: 0;
+        }
+
+
+
+
+        #preheader_table {
+            display: none !important;
+        }
+
+        .preheader_cell {
+            color: #F0F1F2;
+        }
+
+
+
+
+        #header_table {
+            background-color: #F0F1F2;
+        }
+
+        .header_cell {
+            text-align: left;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 30px;
+            padding-left: 0;
+        }
+
+
+
+
+        #content_table {
+            background-color: #FFFFFF;
+        }
+
+        .content_cell {
+            color: #4E595D;
+            font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 150%;
+            text-align: left;
+            padding: 0;
+        }
+
+        .content_cell_mobile {
+            display: none;
+        }
+
+        .content_cell a:link,
+        .content_cell a:visited,
+        .content_cell a .yshortcuts,
+        .content_cell a span {
+            color: #2D5BE3;
+            text-decoration: underline;
+        }
+
+        .content_cell img {
+            height: auto;
+            max-width: 600px;
+        }
+
+
+
+
+        #footer_table {
+            background-color: #F0F1F2;
+        }
+
+        .footer_cell {
+            color: #959B9E;
+            font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+            font-size: 10px;
+            line-height: 150%;
+            padding-top: 10px;
+            padding-right: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .footer_cell a:link,
+        .footer_cell a:visited,
+        .footer_cell a .yshortcuts,
+        .footer_cell a span {
+            color: #959B9E;
+            text-decoration: underline;
+        }
+
+
+
+        #hero {
+            background-color: #153bb5;
+            background-image: url('https://images.pexels.com/photos/2050718/pexels-photo-2050718.jpeg');
+            background-repeat: no-repeat;
+            background-position: top center;
+
+        }
+
+        #hero .hero_heading {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        #hero .hero_heading h1 {
+            font-size: 30px;
+            color: #fff;
+            padding: 0;
+        }
+
+        #hero .hero_body {
+            color: #fff;
+        }
+
+
+
+        #greatest {
+            border-bottom: 1px solid #eee;
+        }
+
+        #greatest.greatest_heading h1 {
+            font-size: 18px;
+            padding: 0;
+        }
+
+
+
+        #lifehacks .lifehacks_wrap {
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        #lifehacks .lifehacks_title h1 {
+            font-size: 22px;
+            padding: 0;
+        }
+
+
+
+
+
+
+        @media only screen and (max-width: 480px) {
+
+
+
+            body,
+            table,
+            td,
+            p,
+            a,
+            li,
+            blockquote {
+                -webkit-text-size-adjust: none !important;
+            }
+
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+
+
+
+            td[id=pagewrap_cell] {
+                padding-top: 20px !important;
+                padding-right: 10px !important;
+                padding-bottom: 15px !important;
+                padding-left: 10px !important;
+            }
+
+            table[id=container_table] {
+                max-width: 600px !important;
+                width: 100% !important;
+            }
+
+            td[class=header_cell] {
+                text-align: center !important;
+                padding-top: 0 !important;
+                padding-right: 0 !important;
+                padding-bottom: 20px !important;
+                padding-left: 0 !important;
+            }
+
+            td[class=content_cell] img {
+                height: auto !important;
+                max-width: 480px !important;
+            }
+
+            td[class=content_cell] img[class=onehundred_percent_width] {
+                width: 100% !important;
+            }
+
+            td[class=full_width] {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            td[class="force_full_width"] {
+                display: none !important;
+            }
+
+
+
+            table[class="mobile_table_width"] {
+                width: 100% !important;
+            }
+
+
+            #hero .hero_heading {
+                padding-top: 60px !important;
+            }
+
+            #hero .hero_heading h1 {
+                font-size: 24px !important;
+            }
+
+            #hero .hero_body {
+                padding-left: 40px !important;
+                padding-right: 40px !important;
+            }
+
+            #hero .hero_button {
+                padding-bottom: 70px !important;
+            }
+
+
+
+            #greatest.greatest_heading {
+                padding-left: 30px !important;
+                padding-right: 30px !important;
+            }
+
+            #greatest.greatest_heading h1 {
+                font-size: 18px;
+                padding: 0;
+            }
+
+
+
+            #lifehacks .lifehacks_grid {
+                padding-top: 50px !important;
+            }
+
+            #lifehacks .lifehacks_title {
+                text-align: center !important;
+                padding-top: 0px !important;
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+            }
+
+            #lifehacks .lifehacks_body {
+                text-align: center !important;
+                padding-bottom: 40px !important;
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+            }
+
+            #lifehacks .lifehacks_leftright {
+                padding-left: 50px !important;
+                padding-right: 50px !important;
+            }
+
+
+
+
+
+        }
+    </style>
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"
+    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;height:100% !important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width:100% !important;background-color:#F0F1F2;">
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="pagewrap_table"
+            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;height:100% !important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width:100% !important;background-color:#F0F1F2;">
+            <tr>
+                <td id="pagewrap_cell" align="center" valign="top"
+                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;height:100% !important;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;width:100% !important;padding-top:40px;padding-right:20px;padding-bottom:30px;padding-left:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" id="container_table"
+                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;width:600px;">
+
+                        <tr>
+                            <td align="center" valign="top"
+                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                <table id="content_table" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;background-color:#FFFFFF;">
+                                    <!-- DO NOT REMOVE - THIS FORCES GMAIL ON ANDROID TO 100% -->
+                                    <tr>
+                                        <td class="force_full_width" valign="top" width="100%"
+                                            style="min-width:600px;height:1px!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                            <img border="0"
+                                                src="https://4sq-email-assets.s3.amazonaws.com/fs-welcome-update/images/space.png"
+                                                width="600" height="1" alt=""
+                                                style="height:1px!important;display:block;-ms-interpolation-mode:bicubic;border-width:0;line-height:100%!important;outline-style:none;text-decoration:none;" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="hero" class="content_cell"
+                                            background="https://4sq-email-assets.s3.amazonaws.com/fs-welcome-update/images/hero-bg.jpg"
+                                            bgcolor="#153bb5" valign="top" width="600"
+                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-color:#153bb5;background-image:url('https://images.pexels.com/photos/2050718/pexels-photo-2050718.jpeg');background-repeat:no-repeat;background-position:top center; background-size: cover;">
+
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                <tr>
+                                                    <td valign="middle" class="content_cell hero_heading"
+                                                        style="padding-top:150px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-left:30px;padding-right:30px;">
+                                                        <center>
+                                                            <h1
+                                                                style="color:#ffffff;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:30px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                Welcome to DJI Store</h1>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="middle" class="content_cell hero_body"
+                                                        style="padding-top:20px;padding-bottom:40px;padding-left:70px;padding-right:70px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;color:#fff;">
+                                                        <center>by - Diwakar Sharma
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                         
+                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="greatest" class="content_cell greatest_heading"
+                                            style="padding-top:35px;padding-bottom:35px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#eee;">
+                                            <center>
+                                                <h1
+                                                    style="color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:18px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                    Named one of the "<span style="color:#fb4878;">World’s Greatest
+                                                        Apps</span>" by Business Insider</h1>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="content_wrap"
+                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                id="lifehacks"
+                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                <!-- 01 -->
+                                                <tr>
+                                                    <td class="content_cell lifehacks_grid"
+                                                        style="padding-top:50px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <table width="100%" align="left" border="0" cellpadding="0"
+                                                            cellspacing="0"
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                            <tr>
+                                                                <td class="content_cell lifehacks_wrap"
+                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#eeeeee;">
+                                                                    <table width="100%" border="0" cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                        <tr>
+                                                                            <td class="content_cell lifehacks_leftright"
+                                                                                style="padding-left:75px;padding-right:60px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;">
+                                                                                <table class="mobile_table_width"
+                                                                                    width="265" align="left" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td class="content_cell lifehacks_title"
+                                                                                            style="padding-top:5px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <h1
+                                                                                                style="color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:22px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                                <a
+                                                                                                    style="color:#4e595d;text-decoration:none!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                                                                                    Search
+                                                                                                    for and discover
+                                                                                                    Drone's and camera.</a>
+                                                                                            </h1>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="content_cell lifehacks_body"
+                                                                                            style="padding-top:16px;padding-right:40px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-left:0;">
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                                <table class="mobile_table_width"
+                                                                                    width="180" align="right" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td valign="bottom"
+                                                                                            class="content_cell lifehacks_image"
+                                                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <center>
+
+
+                                                                                                <img src="https://dji-official-fe.djicdn.com/dps/108edd6a433a39220c1b0d05b6cab252.png"
+                                                                                                    width="180"
+                                                                                                    height="229" alt=""
+                                                                                                    border="0"
+                                                                                                    style="display:block!important;-ms-interpolation-mode:bicubic;border-width:0;line-height:100%!important;outline-style:none;text-decoration:none;height:auto;max-width:600px;" />
+
+                                                                                            </center>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- 02 -->
+                                                <tr>
+                                                    <td class="content_cell lifehacks_grid"
+                                                        style="padding-top:50px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <table width="100%" align="left" border="0" cellpadding="0"
+                                                            cellspacing="0"
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                            <tr>
+                                                                <td class="content_cell lifehacks_wrap"
+                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#eeeeee;">
+                                                                    <table width="100%" border="0" cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                        <tr>
+                                                                            <td class="content_cell lifehacks_leftright"
+                                                                                style="padding-left:60px;padding-right:40px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;">
+                                                                                <table class="mobile_table_width"
+                                                                                    width="265" align="right" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td class="content_cell lifehacks_title"
+                                                                                            style="padding-top:5px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <h1
+                                                                                                style="color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:22px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                                <a
+                                                                                                    style="color:#4e595d;text-decoration:none!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                                                                                    Professional photography, save your
+                                                                                                    favorites, start a
+                                                                                                    bucket list.
+                                                                                                </a>
+                                                                                            </h1>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                </table>
+
+                                                                                <table class="mobile_table_width"
+                                                                                    width="180" align="left" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td valign="bottom"
+                                                                                            class="content_cell lifehacks_image"
+                                                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <center>
+                                                                                                <a
+                                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#2D5BE3;text-decoration:underline;">
+                                                                                                    <img src="https://dji-official-fe.djicdn.com/cms/uploads/afa366210665c77663733585d1e95aee.png"
+                                                                                                        width="180"
+                                                                                                        height="229"
+                                                                                                        alt=""
+                                                                                                        border="0"
+                                                                                                        style="display:block!important;-ms-interpolation-mode:bicubic;border-width:0;line-height:100%!important;outline-style:none;text-decoration:none;height:auto;max-width:600px;" />
+                                                                                                </a>
+                                                                                            </center>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- 03 -->
+                                                <tr>
+                                                    <td class="content_cell lifehacks_grid"
+                                                        style="padding-top:50px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <table width="100%" align="left" border="0" cellpadding="0"
+                                                            cellspacing="0"
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                            <tr>
+                                                                <td class="content_cell lifehacks_wrap"
+                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#eeeeee;">
+                                                                    <table width="100%" border="0" cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                        <tr>
+                                                                            <td class="content_cell lifehacks_leftright"
+                                                                                style="padding-left:75px;padding-right:60px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;">
+                                                                                <table class="mobile_table_width"
+                                                                                    width="265" align="left" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td class="content_cell lifehacks_title"
+                                                                                            style="padding-top:5px;padding-right:30px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-left:0;">
+                                                                                            <h1
+                                                                                                style="color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:22px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                                <a
+                                                                                                    style="color:#4e595d;text-decoration:none!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                                                                                    Keep
+                                                                                                    track of major movments with stability.
+                                                                                                    </a>
+                                                                                            </h1>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                </table>
+
+                                                                                <table class="mobile_table_width"
+                                                                                    width="180" align="right" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td valign="bottom"
+                                                                                            class="content_cell lifehacks_image"
+                                                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <center>
+                                                                                                <a
+                                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#2D5BE3;text-decoration:underline;">
+                                                                                                    <img src="https://dji-official-fe.djicdn.com/dps/272179bf51506a99bfef48aa19be2ad6.png"
+                                                                                                        width="180"
+                                                                                                        height="229"
+                                                                                                        alt=""
+                                                                                                        border="0"
+                                                                                                        style="display:block!important;-ms-interpolation-mode:bicubic;border-width:0;line-height:100%!important;outline-style:none;text-decoration:none;height:auto;max-width:600px;" />
+                                                                                                </a>
+                                                                                            </center>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- 04 -->
+                                                <tr>
+                                                    <td class="content_cell lifehacks_grid"
+                                                        style="padding-top:50px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <table width="100%" align="left" border="0" cellpadding="0"
+                                                            cellspacing="0"
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                            <tr>
+                                                                <td class="content_cell lifehacks_wrap"
+                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#eeeeee;">
+                                                                    <table width="100%" border="0" cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                        <tr>
+                                                                            <td class="content_cell lifehacks_leftright"
+                                                                                style="padding-left:60px;padding-right:40px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;">
+                                                                                <table class="mobile_table_width"
+                                                                                    width="265" align="right" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td class="content_cell lifehacks_title"
+                                                                                            style="padding-top:15px;padding-right:80px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-bottom:0;padding-left:0;">
+                                                                                            <h1
+                                                                                                style="color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-style:normal;font-weight:300;line-height:120%!important;letter-spacing:normal;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;font-size:22px!important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                                <a
+                                                                                                    style="color:#4e595d;text-decoration:none!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                                                                                   Professional and quality material only here.</a>
+                                                                                            </h1>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                </table>
+
+                                                                                <table class="mobile_table_width"
+                                                                                    width="180" align="left" border="0"
+                                                                                    cellpadding="0" cellspacing="0"
+                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                                                    <tr>
+                                                                                        <td valign="bottom"
+                                                                                            class="content_cell lifehacks_image"
+                                                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                                                            <center>
+                                                                                                <a
+                                                                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#2D5BE3;text-decoration:underline;">
+                                                                                                    <img src="https://dji-official-fe.djicdn.com/dps/217e4161ba59686dd4b0ef051abb3344@origin.png"
+                                                                                                        width="180"
+                                                                                                        height="229"
+                                                                                                        alt=""
+                                                                                                        border="0"
+                                                                                                        style="display:block!important;-ms-interpolation-mode:bicubic;border-width:0;line-height:100%!important;outline-style:none;text-decoration:none;height:auto;max-width:600px;" />
+                                                                                                </a>
+                                                                                            </center>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- -->
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content_cell"
+                                            style="padding-top:45px;padding-bottom:25px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#4E595D;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:14px!important;line-height:150%!important;text-align:left;padding-right:0;padding-left:0;">
+                                            <center>
+                                                <table cellspacing="0" cellpadding="0" align="center"
+                                                    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;">
+                                                    <tr>
+                                                        <td align="center" height="35" bgcolor="#2c56e8"
+                                                            style="padding-top:2px;padding-bottom:0px;padding-right:20px;padding-left:20px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;color:#ffffff;display:block;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                                            <a
+                                                                style="font-size:14px!important;font-weight:500;font-family:Helvetica, Arial, sans-serif;text-decoration:none;line-height:35px!important;width:100%;display:inline-block;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#2D5BE3;"><span
+                                                                    style="color:#ffffff;text-decoration:none;">Start
+                                                                    searching now</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </center>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td align="center" valign="top"
+                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+                                            <table id="footer_table" border="0" cellpadding="0" cellspacing="0"
+                                                width="100%"
+                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border-collapse:collapse !important;background-color:#F0F1F2;">
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%" height="30"
+                                                        style="padding-top:0;line-height:30px;font-size:30px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;padding-right:0;padding-bottom:0;padding-left:0;text-align:center;">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%"
+                                                        style="background-color:#ffffff;padding-top:20px;padding-bottom:5px;color:#4E595D;font-size:14px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;line-height:150%;padding-right:0;padding-left:0;text-align:center;">
+                                                        Don't have the DJI store app? Get it for your phone:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%"
+                                                        style="background-color:#ffffff;padding-top:5px;padding-bottom:10px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:10px;line-height:150%;padding-right:0;padding-left:0;text-align:center;">
+                                                        <center>&nbsp;&nbsp;&nbsp;
+                                                            <a
+                                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                                <img border="0"
+                                                                    src="https://playfoursquare.s3.amazonaws.com/emails/blasts/badge-ios@2x.png"
+                                                                    width="123" height="35"
+                                                                    alt="Download on the App Store"
+                                                                    style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                            </a>&nbsp;&nbsp;&nbsp;
+                                                            <a
+                                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                                <img border="0"
+                                                                    src="https://playfoursquare.s3.amazonaws.com/emails/blasts/badge-android@2x.png"
+                                                                    width="123" height="35" alt="Get it on Google Play"
+                                                                    style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                            </a>&nbsp;&nbsp;&nbsp;
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%" height="1"
+                                                        style="padding-top:0;line-height:1px;font-size:1px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;padding-right:0;padding-bottom:0;padding-left:0;text-align:center;">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%"
+                                                        style="background-color:#ffffff;padding-top:12px;padding-right:40px;padding-bottom:12px;padding-left:40px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:10px;line-height:150%;text-align:center;">
+                                                        Never miss out on exciting news, product updates, and special
+                                                        announcements.
+                                                        <br>
+                                                        <a
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline">Add
+                                                            us to your address book</a>so your emails don't get stuck in
+                                                        inbox limbo.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%"
+                                                        style="padding-top:25px;padding-right:40px;padding-bottom:5px;padding-left:40px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:10px;line-height:150%;text-align:center;">
+                                                        <a
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                            <img border="0"
+                                                                src="https://playfoursquare.s3.amazonaws.com/emails/blasts/chrome/icon_foursquare@2x.png"
+                                                                width="29" height="25" alt="Foursquare"
+                                                                style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                        </a>
+                                                        <a
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                            <img border="0"
+                                                                src="https://playfoursquare.s3.amazonaws.com/emails/blasts/chrome/icon_twitter@2x.png"
+                                                                width="39" height="25" alt="Twitter"
+                                                                style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                        </a>
+                                                        <a
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                            <img border="0"
+                                                                src="https://playfoursquare.s3.amazonaws.com/emails/blasts/chrome/icon_facebook@2x.png"
+                                                                width="34" height="25" alt="Facebook"
+                                                                style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                        </a>
+                                                        <a href="https://www.instagram.com/corswebduo?igsh=MWE4M2IxNzUxYXpwZg%3D%3D"
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                            <img border="0"
+                                                                src="https://playfoursquare.s3.amazonaws.com/emails/blasts/chrome/icon_instagram@2x.png"
+                                                                width="34" height="25" alt="Instagram"
+                                                                style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                        </a>
+                                                        <a
+                                                            style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline;">
+                                                            <img border="0"
+                                                                src="https://playfoursquare.s3.amazonaws.com/emails/blasts/chrome/icon_pinterest@2x.png"
+                                                                width="34" height="25" alt="Pinterest"
+                                                                style="-ms-interpolation-mode:bicubic;border-width:0;height:auto;line-height:100%;outline-style:none;text-decoration:none;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_cell" valign="top" width="100%"
+                                                        style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;font-family:'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;font-size:10px;line-height:150%;padding-top:10px;padding-right:0;padding-bottom:0;padding-left:0;text-align:center;">
+                                                        This message was sent to
+                                                        <a style="color: #959B9E; text-decoration: underline;"
+                                                            href="#">diwakarsharma2216@gmail.com can always go to your
+                                                            <a
+                                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline">User&nbsp;Settings</a>page
+                                                            to adjust your account and contact info, privacy controls,
+                                                            email preferences and options linking to Twitter and
+                                                            Facebook.&nbsp;To opt out
+                                                            of these emails,&nbsp;
+                                                            <a
+                                                                style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#959B9E;text-decoration:underline">click
+                                                                here</a>.&nbsp;Foursquare Labs, Inc., 50 W 23rd St, NY,
+                                                            NY 10010 -
+
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+    </center>
+
+
+</body>
+
+</html>

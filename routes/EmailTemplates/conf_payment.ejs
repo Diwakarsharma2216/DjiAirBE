@@ -1,0 +1,1508 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Confirmation</title>
+</head>
+<body>
+    <h1>Thank you for your purchase!</h1>
+    <p>Your order has been successfully processed.</p>
+    <p>Order ID: <%= orderId %></p>
+</body>
+</html> -->
+<!-- building Conformation page 28 july 2k24 -->
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Conformation E-mail</title>
+
+
+    <style type="text/css" media="screen">
+        /* Linked Styles */
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+            min-width: 100% !important;
+            width: 100% !important;
+            background: #ffffff;
+            -webkit-text-size-adjust: none
+        }
+
+
+
+
+        /* Mobile styles */
+        @media only screen and (max-device-width: 480px),
+        only screen and (max-width: 480px) {
+            div[class='mobile-br-1'] {
+                height: 1px !important;
+            }
+
+            div[class='mobile-br-1-b'] {
+                height: 1px !important;
+                background: #ffffff !important;
+                display: block !important;
+            }
+
+            div[class='mobile-br-5'] {
+                height: 5px !important;
+            }
+
+            div[class='mobile-br-10'] {
+                height: 10px !important;
+            }
+
+            div[class='mobile-br-15'] {
+                height: 15px !important;
+            }
+
+            div[class='mobile-br-20'] {
+                height: 20px !important;
+            }
+
+            div[class='mobile-br-30'] {
+                height: 30px !important;
+            }
+
+            th[class='m-td'],
+            td[class='m-td'],
+            div[class='hide-for-mobile'],
+            span[class='hide-for-mobile'] {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                font-size: 0 !important;
+                line-height: 0 !important;
+                min-height: 0 !important;
+            }
+
+            span[class='mobile-block'] {
+                display: block !important;
+            }
+
+            div[class='img-m-center'] {
+                text-align: center !important;
+            }
+
+            div[class='h2-white-m-center'],
+            div[class='text-white-m-center'],
+            div[class='text-white-r-m-center'],
+            div[class='h2-m-center'],
+            div[class='text-m-center'],
+            div[class='text-r-m-center'],
+            td[class='text-top'],
+            div[class='text-top'],
+            div[class='h6-m-center'],
+            div[class='text-m-center'],
+            div[class='text-top-date'],
+            div[class='text-white-top'],
+            td[class='text-white-top'],
+            td[class='text-white-top-r'],
+            div[class='text-white-top-r'] {
+                text-align: center !important;
+            }
+
+            div[class='fluid-img'] img,
+            td[class='fluid-img'] img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            table[class='mobile-shell'] {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            table[class='center'] {
+                margin: 0 auto;
+            }
+
+            th[class='column-rtl'],
+            th[class='column-rtl2'],
+            th[class='column-top'],
+            th[class='column'] {
+                float: left !important;
+                width: 100% !important;
+                display: block !important;
+            }
+
+            td[class='td'] {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            td[class='content-spacing'] {
+                width: 15px !important;
+            }
+
+            td[class='content-spacing2'] {
+                width: 10px !important;
+            }
+        }
+
+
+
+        @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: lato;
+        }
+
+
+
+        .steps-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+
+        .timeline {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .li {
+            transition: all 200ms ease-in;
+        }
+
+        .timestamp {
+            margin-bottom: 20px;
+            padding: 0px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 100;
+        }
+
+        .status {
+            padding: 0px 40px;
+            display: flex;
+            justify-content: center;
+            border-top: 2px solid #D6DCE0;
+            position: relative;
+            transition: all 200ms ease-in;
+        }
+
+        .status h4 {
+            font-weight: 600;
+        }
+
+        .status:before {
+            content: "";
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            position: absolute;
+            top: -15px;
+            left: 42%;
+            transition: all 200ms ease-in;
+        }
+
+        .li.complete .status {
+            border-top: 2px solid #66DC71;
+        }
+
+        .li.complete .status:before {
+            background-color: #66DC71;
+            border: none;
+            transition: all 200ms ease-in;
+        }
+
+        .li.complete .status h4 {
+            color: #66DC71;
+        }
+
+        @media (min-device-width: 320px) and (max-device-width: 700px) {
+            .timeline {
+                list-style-type: none;
+                display: block;
+            }
+
+            .li {
+                transition: all 200ms ease-in;
+                display: flex;
+                width: inherit;
+            }
+
+            .timestamp {
+                width: 20vw;
+                padding: 0px 20px;
+            }
+
+            .status:before {
+                left: 20%;
+                top: 30%;
+                transition: all 200ms ease-in;
+            }
+
+            .status {
+                width: 50vw;
+                padding: 0px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body class="body"
+    style="padding:0 !important; margin:0 !important; display:block !important; min-width:100% !important; width:100% !important; background:#ffffff; -webkit-text-size-adjust:none">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet'
+        type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+        <tr>
+            <td align="center" valign="top">
+
+                <!-- 3/ Header -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#212121">
+                    <tr>
+                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="1">
+                        </td>
+                        <td align="center">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer"
+                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                <tr>
+                                    <td height="20" class="spacer"
+                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer"
+                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                <tr>
+                                    <td height="20" class="spacer"
+                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell">
+                                <tr>
+                                    <td class="td"
+                                        style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0">
+
+                                        <!-- Header -->
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td class="content-spacing"
+                                                    style="font-size:0pt; line-height:0pt; text-align:left" width="1">
+                                                </td>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                        class="spacer"
+                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                        <tr>
+                                                            <td height="30" class="spacer"
+                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                &nbsp;</td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div class="hide-for-mobile">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="10" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <th class="column"
+                                                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0">
+                                                                <table width="100%" border="0" cellspacing="0"
+                                                                    cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="right" class="text-white-top-r"
+                                                                            style="color:#ffffff; font-family:Arial,sans-serif; font-size:11px; line-height:15px; text-align:right; text-transform:uppercase">
+                                                                            <div mc:edit="text_2">
+                                                                                <a href="" class="link-white"
+                                                                                    style="color:#ffffff; text-decoration:none"><span
+                                                                                        class="link-white"
+                                                                                        style="color:#ffffff; text-decoration:none">Visit
+                                                                                        DJI</span></a>
+                                                                                &nbsp; &nbsp; &nbsp; <a
+                                                                                    href="https://github.com/Diwakarsharma2216"
+                                                                                    class="link-white"
+                                                                                    style="color:#ffffff; text-decoration:none"><span
+                                                                                        class="link-white"
+                                                                                        style="color:#ffffff; text-decoration:none">Github</span></a>
+                                                                                &nbsp;
+                                                                                &nbsp; &nbsp;<a
+                                                                                    href="https://www.instagram.com/corswebduo?igsh=MWE4M2IxNzUxYXpwZg=="
+                                                                                    class="link-white"
+                                                                                    style="color:#ffffff; text-decoration:none"><span
+                                                                                        class="link-white"
+                                                                                        style="color:#ffffff; text-decoration:none">Social
+                                                                                        Media</span></a>
+                                                                                &nbsp; &nbsp; &nbsp; <a
+                                                                                    href="https://github.com/Diwakarsharma2216/DjiAir"
+                                                                                    class="link-white"
+                                                                                    style="color:#ffffff; text-decoration:none"><span
+                                                                                        class="link-white"
+                                                                                        style="color:#ffffff; text-decoration:none">DJI
+                                                                                        repo</span></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </th>
+                                                            <!-- END Column -->
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                        class="spacer"
+                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                        <tr>
+                                                            <td height="40" class="spacer"
+                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                &nbsp;</td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                                <td class="content-spacing"
+                                                    style="font-size:0pt; line-height:0pt; text-align:left" width="1">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- END Header -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+
+                    </tr>
+                </table>
+                <!-- END 3/ Header -->
+
+                <!-- Section 1 -->
+                <div mc:repeatable="Select" mc:variant="Section 1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6e6e6">
+                        <tr>
+                            <td valign="top" class="m-td" style="font-size:0pt; line-height:0pt; text-align:left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#212121"
+                                    class="border"
+                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                    <tr>
+                                        <td bgcolor="#212121" height="190" class="border"
+                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                            &nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top" class="m-td" style="font-size:0pt; line-height:0pt; text-align:left"
+                                width="1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#212121"
+                                    class="border"
+                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                    <tr>
+                                        <td bgcolor="#212121" height="190" class="border"
+                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                            &nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="650" align="center">
+                                <table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell"
+                                    bgcolor="#f6f6f6">
+                                    <tr>
+                                        <td class="td"
+                                            style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td class="img"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="10"></td>
+                                                    <td>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="10" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <div class="fluid-img"
+                                                            style="font-size:0pt; line-height:0pt; text-align:left">
+                                                            <div class="img-center"
+                                                                style="font-size:0pt; line-height:0pt; text-align:center">
+                                                                <img src="https://img.freepik.com/free-photo/drone-with-camera-is-flying-iceberg_335224-624.jpg?ga=GA1.1.1559264531.1691417508&semt=ais_user"
+                                                                    mc:edit="image_7" border="0" width="630"
+                                                                    style="max-width:630px" height="360" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="10" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </td>
+                                                    <td class="img"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="10"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell">
+                                    <tr>
+                                        <td>
+                                            <div class="fluid-img"
+                                                style="font-size:0pt; line-height:0pt; text-align:left"></div>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                bgcolor="#e6e6e6">
+                                                <tr>
+                                                    <td class="content-spacing"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="30"></td>
+                                                    <td>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="20" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <div class="h3-grey-center"
+                                                            style="color:#666666; font-family:Arial,sans-serif; font-size:26px; line-height:34px; text-align:center">
+                                                            <div mc:edit="text_3">
+                                                                We appreciate your DJI purchase<span
+                                                                    class="hide-for-mobile"><br />
+                                                                </span>
+                                                                #Fly with your dreams</div>
+                                                        </div>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="20" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+
+                                                        <div class="text-grey-center"
+                                                            style="color:#666666; font-family:Arial,sans-serif; font-size:18px; line-height:20px; text-align:center">
+                                                            <p>Your order has been successfully processed.</p>
+                                                            <div mc:edit="text_4">Order ID :- <%= orderId %><span
+                                                                    style="color:#300aac; font-family:Arial,sans-serif; font-size:18px; line-height:20px; text-align:center"></span>
+                                                            </div>
+                                                        </div>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="20" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+                                                        <div class="text-grey-center"
+                                                            style="color:#666666; font-family:Arial,sans-serif; font-size:18px; line-height:20px; text-align:center">
+                                                            <div mc:edit="text_4">Find simiar products here....<span
+                                                                    style="color:#300aac; font-family:Arial,sans-serif; font-size:18px; line-height:20px; text-align:center"></span>
+                                                            </div>
+                                                        </div>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                            class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            <tr>
+                                                                <td height="30" class="spacer"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                    &nbsp;</td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </td>
+                                                    <td class="content-spacing"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="30"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="m-td" style="font-size:0pt; line-height:0pt; text-align:left" valign="top"
+                                width="1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#212121"
+                                    class="border"
+                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                    <tr>
+                                        <td bgcolor="#212121" height="190" class="border"
+                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                            &nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top" class="m-td" style="font-size:0pt; line-height:0pt; text-align:left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#212121"
+                                    class="border"
+                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                    <tr>
+                                        <td bgcolor="#212121" height="190" class="border"
+                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                            &nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- END Section 1 -->
+
+                <!-- Section 2 -->
+                <div mc:repeatable="Select" mc:variant="Section 2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e6e6e6">
+                        <tr>
+                            <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left"
+                                width="1"></td>
+                            <td align="center">
+                                <table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell"
+                                    bgcolor="#e6e6e6">
+                                    <tr>
+                                        <td class="td"
+                                            style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0">
+
+
+                                            <div class="hide-for-mobile">
+                                                <div class="img-center"
+                                                    style="font-size:0pt; line-height:0pt; text-align:center"><img
+                                                        src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_ellipse.jpg"
+                                                        mc:edit="image_9" border="0" width="14" style="max-width:14px"
+                                                        height="14" alt="" /></div>
+                                            </div>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                style="direction: rtl" dir="rtl">
+                                                <tr>
+                                                    <!-- Column -->
+                                                    <th class="column-rtl"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; direction:ltr; Margin:0"
+                                                        dir="ltr" width="325">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="60" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="m-td"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="148"><img
+                                                                                    src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_right.jpg"
+                                                                                    mc:edit="image_10" border="0"
+                                                                                    width="110" style="max-width:110px"
+                                                                                    height="7" alt="" /></td>
+                                                                            <td class="img"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left">
+                                                                                <div class="img-m-center"
+                                                                                    style="font-size:0pt; line-height:0pt">
+                                                                                    <img src="https://dji-official-fe.djicdn.com/cms/uploads/936cbbb2fcf7232b54617a4ce57980f6.png"
+                                                                                        mc:edit="image_11" border="0"
+                                                                                        width="101"
+                                                                                        style="max-width:101px"
+                                                                                        height="99" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="column"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0"
+                                                        width="1" bgcolor="#b2b2b2"></th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="column-rtl"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; direction:ltr; Margin:0"
+                                                        dir="ltr" width="324">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="40" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="20" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="30"></td>
+                                                                            <td>
+                                                                                <div class="h6-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:16px; line-height:22px; text-align:left; font-weight:bold">
+                                                                                    <div mc:edit="text_5">
+                                                                                        Osmo Mobile 6 </div>
+                                                                                </div>
+                                                                                <table width="100%" border="0"
+                                                                                    cellspacing="0" cellpadding="0"
+                                                                                    class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    <tr>
+                                                                                        <td height="4" class="spacer"
+                                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                            &nbsp;</td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                                <div class="text-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:20px; text-align:left">
+                                                                                    <div mc:edit="text_6">
+                                                                                        <li>Ready…Steady…Go!</li>
+                                                                                        <li>Compact and Portable</li>
+                                                                                        <li>Quick Launch</li>
+                                                                                        <li>3-Axis Stabilization</li>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="58"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                </tr>
+                                            </table>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <!-- Column -->
+                                                    <th class="column-top"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0"
+                                                        dir="ltr" width="324">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="60" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="img-right"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:right">
+                                                                                <div class="img-m-center"
+                                                                                    style="font-size:0pt; line-height:0pt">
+                                                                                    <img src="https://dji-official-fe.djicdn.com/cms/uploads/a7157704665bc40ef41f2da73806a55f.png"
+                                                                                        mc:edit="image_12" border="0"
+                                                                                        width="101"
+                                                                                        style="max-width:101px"
+                                                                                        height="99" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="m-td"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="148">
+                                                                                <div class="img-right"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:right">
+                                                                                    <img src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_left.jpg"
+                                                                                        mc:edit="image_13" border="0"
+                                                                                        width="110"
+                                                                                        style="max-width:110px"
+                                                                                        height="7" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="m-td"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="1" bgcolor="#b2b2b2"></th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="column-top"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0"
+                                                        width="325">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="40" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="20" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="58"></td>
+                                                                            <td>
+                                                                                <div class="h6-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:16px; line-height:22px; text-align:left; font-weight:bold">
+                                                                                    <div mc:edit="text_7">DJI Avata 2
+                                                                                    </div>
+                                                                                    <table width="100%" border="0"
+                                                                                        cellspacing="0" cellpadding="0"
+                                                                                        class="spacer"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                        <tr>
+                                                                                            <td height="4"
+                                                                                                class="spacer"
+                                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                                &nbsp;</td>
+                                                                                        </tr>
+                                                                                    </table>
+
+                                                                                    <div class="text-m-center"
+                                                                                        style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:20px; text-align:left">
+                                                                                        <div mc:edit="text_8">
+                                                                                            <li>DJI Goggles 3</li>
+                                                                                            <li>Feel Every Flight</li>
+                                                                                            <li>One-Push 180° Drift</li>
+                                                                                            <li>1/1.3-inch CMOS Sensor
+                                                                                            </li>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            </td>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="30"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                </tr>
+                                            </table>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                style="direction: rtl" dir="rtl">
+                                                <tr>
+                                                    <!-- Column -->
+                                                    <th class="column-rtl"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; direction:ltr; Margin:0"
+                                                        dir="ltr" width="325">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="60" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="m-td"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="148"><img
+                                                                                    src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_right.jpg"
+                                                                                    mc:edit="image_14" border="0"
+                                                                                    width="110" style="max-width:110px"
+                                                                                    height="7" alt="" /></td>
+                                                                            <td class="img"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left">
+                                                                                <div class="img-m-center"
+                                                                                    style="font-size:0pt; line-height:0pt">
+                                                                                    <img src="https://dji-official-fe.djicdn.com/cms/uploads/cf81d5481db6da01d9413292eef0da48.png"
+                                                                                        mc:edit="image_15" border="0"
+                                                                                        width="101"
+                                                                                        style="max-width:101px"
+                                                                                        height="99" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="40" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="m-td"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="1" bgcolor="#b2b2b2"></th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="column-rtl"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; direction:ltr; Margin:0"
+                                                        dir="ltr" width="324">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="20" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="40" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="30"></td>
+                                                                            <td>
+                                                                                <div class="h6-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:16px; line-height:22px; text-align:left; font-weight:bold">
+                                                                                    <div mc:edit="text_9">
+                                                                                        DJI FPV
+                                                                                    </div>
+                                                                                </div>
+                                                                                <table width="100%" border="0"
+                                                                                    cellspacing="0" cellpadding="0"
+                                                                                    class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    <tr>
+                                                                                        <td height="4" class="spacer"
+                                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                            &nbsp;</td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                                <div class="text-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:20px; text-align:left">
+                                                                                    <div mc:edit="text_10">
+                                                                                        <li>DJI FPV Goggles V2</li>
+                                                                                        <li>4K/60fps Super-Wide FOV</li>
+                                                                                        <li>Emergency Brake and Hover
+                                                                                        </li>
+                                                                                        <li>Redefine Flying</li>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <table width="100%" border="0"
+                                                                                    cellspacing="0" cellpadding="0"
+                                                                                    class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    <tr>
+                                                                                        <td height="40" class="spacer"
+                                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                            &nbsp;</td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                            </td>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="58"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                </tr>
+                                            </table>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <!-- Column -->
+                                                    <th class="column-top"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0"
+                                                        dir="ltr" width="324">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="60" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="img-right"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:right">
+                                                                                <div class="img-m-center"
+                                                                                    style="font-size:0pt; line-height:0pt">
+                                                                                    <img src="https://dji-official-fe.djicdn.com/cms/uploads/d12f5e0309fbe02b8b6dc1b86e325841.png"
+                                                                                        mc:edit="image_12" border="0"
+                                                                                        width="101"
+                                                                                        style="max-width:101px"
+                                                                                        height="99" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="m-td"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="148">
+                                                                                <div class="img-right"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:right">
+                                                                                    <img src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_left.jpg"
+                                                                                        mc:edit="image_13" border="0"
+                                                                                        width="110"
+                                                                                        style="max-width:110px"
+                                                                                        height="7" alt="" />
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="m-td"
+                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                        width="1" bgcolor="#b2b2b2"></th>
+                                                    <!-- END Column -->
+                                                    <!-- Column -->
+                                                    <th class="column-top"
+                                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0"
+                                                        width="325">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="hide-for-mobile">
+                                                                        <table width="100%" border="0" cellspacing="0"
+                                                                            cellpadding="0" class="spacer"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                            <tr>
+                                                                                <td height="40" class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    &nbsp;</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="20" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tr>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="58"></td>
+                                                                            <td>
+                                                                                <div class="h6-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:16px; line-height:22px; text-align:left; font-weight:bold">
+                                                                                    <div mc:edit="text_7">DJI AGRAS T10
+                                                                                    </div>
+                                                                                </div>
+                                                                                <table width="100%" border="0"
+                                                                                    cellspacing="0" cellpadding="0"
+                                                                                    class="spacer"
+                                                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                    <tr>
+                                                                                        <td height="4" class="spacer"
+                                                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                            &nbsp;</td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                                <div class="text-m-center"
+                                                                                    style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:20px; text-align:left">
+                                                                                    <div mc:edit="text_8">
+                                                                                        <li>The Ideal Drone for New
+                                                                                            Farmers</li>
+                                                                                        <li>Precision Spraying</li>
+                                                                                        <li>Dual FPV Cameras for
+                                                                                            Improved Awareness</li>
+                                                                                        <li>Cloud-Based 3D Farming</li>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="content-spacing"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                width="30"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </th>
+                                                    <!-- END Column -->
+                                                </tr>
+                                            </table>
+                                            <div class="hide-for-mobile">
+                                                <div class="img-center"
+                                                    style="font-size:0pt; line-height:0pt; text-align:center"><img
+                                                        src="https://www.plcarrental.com/wp-content/uploads/2020/05/graphic_ellipse.jpg"
+                                                        mc:edit="image_16" border="0" width="14" style="max-width:14px"
+                                                        height="14" alt="" /></div>
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                    class="spacer"
+                                                    style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                    <tr>
+                                                        <td height="40" class="spacer"
+                                                            style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                            &nbsp;</td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                            <!-- Button -->
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0"
+                                                            bgcolor="#212121" style="border-radius: 2px;">
+                                                            <tr>
+                                                                <td class="img"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                    width="18"></td>
+                                                                <td>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="10" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <div class="text-button"
+                                                                        style="color:#ffffff; font-family:Arial,sans-serif; font-size:14px; line-height:18px; text-align:center; text-transform:uppercase">
+                                                                        <div mc:edit="text_11"><a
+                                                                                href="192.168.188.120:5000/"
+                                                                                target="_blank" class="link-white"
+                                                                                style="color:#ffffff; text-decoration:none"><span
+                                                                                    class="link-white"
+                                                                                    style="color:#ffffff; text-decoration:none">Explore
+                                                                                    DJI</span></a></div>
+                                                                    </div>
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0" class="spacer"
+                                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                        <tr>
+                                                                            <td height="10" class="spacer"
+                                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                                &nbsp;</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                </td>
+                                                                <td class="img"
+                                                                    style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                    width="18"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- END Button -->
+
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                class="spacer"
+                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                <tr>
+                                                    <td height="50" class="spacer"
+                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                        &nbsp;</td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left"
+                                width="1"></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- END Section 2 -->
+
+                <!-- Footer -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
+                    <tr>
+                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="1">
+                        </td>
+                        <td align="center">
+                            <table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell">
+                                <tr>
+                                    <td class="td"
+                                        style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td class="content-spacing"
+                                                    style="font-size:0pt; line-height:0pt; text-align:left" width="30">
+                                                </td>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                        class="spacer"
+                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                        <tr>
+                                                            <td height="50" class="spacer"
+                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                &nbsp;</td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <!-- Column -->
+                                                            <th class="column-top"
+                                                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0">
+                                                                <table width="100%" border="0" cellspacing="0"
+                                                                    cellpadding="0">
+                                                                    <tr>
+                                                                        <td class="img"
+                                                                            style="font-size:0pt; line-height:0pt; text-align:left">
+                                                                          
+                                                                            <div style="font-size:0pt; line-height:0pt;"
+                                                                                class="mobile-br-15"></div>
+
+                                                                            <div style="font-size:0pt; line-height:0pt;"
+                                                                                class="mobile-br-15"></div>
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </th>
+                                                            <!-- END Column -->
+                                                            <!-- Column -->
+                                                            <th class="column-top"
+                                                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0"
+                                                                width="266">
+                                                                <table width="100%" border="0" cellspacing="0"
+                                                                    cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="right">
+                                                                            <table class="center" border="0"
+                                                                                cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_facebook.jpg"
+                                                                                                mc:edit="image_26"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_twitter.jpg"
+                                                                                                mc:edit="image_27"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_gplus.jpg"
+                                                                                                mc:edit="image_28"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_youtube.jpg"
+                                                                                                mc:edit="image_29"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_instagram.jpg"
+                                                                                                mc:edit="image_30"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_pinterest.jpg"
+                                                                                                mc:edit="image_31"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="32"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_linkedin.jpg"
+                                                                                                mc:edit="image_32"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                    <td class="img"
+                                                                                        style="font-size:0pt; line-height:0pt; text-align:left"
+                                                                                        width="18"><a href="#"
+                                                                                            target="_blank"><img
+                                                                                                src="https://www.plcarrental.com/wp-content/uploads/2020/05/footer_ico_rss.jpg"
+                                                                                                mc:edit="image_33"
+                                                                                                border="0" width="18"
+                                                                                                style="max-width:18px"
+                                                                                                height="21"
+                                                                                                alt="" /></a></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </th>
+                                                            <!-- END Column -->
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <!-- Column -->
+                                                            <th class="column"
+                                                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; Margin:0"
+                                                                valign="bottom" width="266">
+                                                                <table width="100%" border="0" cellspacing="0"
+                                                                    cellpadding="0">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div style="font-size:0pt; line-height:0pt;"
+                                                                                class="mobile-br-20"></div>
+
+                                                                            <div class="text-m-center"
+                                                                                style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:20px; text-align:left">
+                                                                                <div mc:edit="text_34">Copyright &copy;
+                                                                                    2020 Phatra Leasing Public Company
+                                                                                    Limited</div>
+                                                                            </div>
+                                                                            <div style="font-size:0pt; line-height:0pt;"
+                                                                                class="mobile-br-15"></div>
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </th>
+                                                            <!-- END Column -->
+                                                            <!-- Column -->
+                                                            <th class="column-top"
+                                                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; Margin:0">
+                                                                <table width="100%" border="0" cellspacing="0"
+                                                                    cellpadding="0">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="text-r-m-center"
+                                                                                style="color:#777777; font-family:Arial,sans-serif; font-size:12px; line-height:24px; text-align:right">
+                                                                                <div mc:edit="text_35">
+                                                                                    <a href="#" target="_blank"
+                                                                                        class="link-grey2"
+                                                                                        style="color:#666666; text-decoration:none"><span
+                                                                                            class="link-grey2"
+                                                                                            style="color:#666666; text-decoration:none">
+                                                                                            App Cloned by :- <span
+                                                                                                style="color:red;">Diwakar
+                                                                                                Sharma</span>
+                                                                                            <br />
+                                                                                            duration (Dec 2k23 ~ July
+                                                                                            2k24)
+                                                                                            <br />
+                                                                                            get all info from here
+                                                                                        </span></a>
+                                                                                    <br />
+                                                                                    <a href="https://github.com/Diwakarsharma2216/DjiAir"
+                                                                                        class="link-grey2-u"
+                                                                                        style="color:#666666; text-decoration:underline"><span
+                                                                                            class="link-grey2-u"
+                                                                                            style="color:#666666; text-decoration:underline">drone_site</span></a>
+                                                                                    &nbsp; <a
+                                                                                        href="https://github.com/Diwakarsharma2216/DjiAir" 
+                                                                                        class="link-grey2-u"
+                                                                                        style="color:#666666; text-decoration:underline"><span
+                                                                                            class="link-grey2-u"
+                                                                                            style="color:#666666; text-decoration:underline">drone_site_BE</span></a>
+                                                                                    <br />
+                                                                                    Phone: <a target="_blank"
+                                                                                        class="link-grey2"
+                                                                                        style="color:#666666; text-decoration:none"><span
+                                                                                            class="link-grey2"
+                                                                                            style="color:#666666; text-decoration:none">+6602-290-7575
+                                                                                            ext. 432 , 434</span></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </th>
+                                                            <!-- END Column -->
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                        class="spacer"
+                                                        style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                        <tr>
+                                                            <td height="40" class="spacer"
+                                                                style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">
+                                                                &nbsp;</td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                                <td class="content-spacing"
+                                                    style="font-size:0pt; line-height:0pt; text-align:left" width="30">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div style="font-size:0pt; line-height:0pt;" class="mobile-br-15"></div>
+
+                        </td>
+                        <td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="1">
+                        </td>
+                    </tr>
+                </table>
+                <!-- END Footer -->
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
